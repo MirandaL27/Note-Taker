@@ -25,23 +25,26 @@ const PORT = process.env.PORT || 3001;
  //need a post route for posting new notes
  app.post('/api/notes', (req, res) => {
      // set id based on what the next index of the array will be
-     console.log(notes);
-   req.body.id = notes.length.toString();
+   req.body.id = notes.notes.length.toString();
 
   if (!validateNote(req.body)) {
     res.status(400).send('The note is not properly formatted.');
   } else {
-    const note = makeNewNote(notes, req.body);
+    const note = makeNewNote(notes.notes, req.body);
     res.json(note);
   }
  })
  //need a route for deleting notes
- app.delete('/api/notes', (req, res) => {
-
+ app.delete('/api/notes/:id', (req, res) => {
+   deleteNote(req.params.id,notes.notes)
  })
 
  app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
+ })
+
+ app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'));
  })
 
 //  app.get('*', (req, res) => {

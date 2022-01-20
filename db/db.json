@@ -1,12 +1,13 @@
 {
   "notes": [
     {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
       "title": "test note",
       "text": "this is a test note",
+      "id": "0"
+    },
+    {
+      "title": "Another note test",
+      "text": "this is another test.",
       "id": "1"
     }
   ]
