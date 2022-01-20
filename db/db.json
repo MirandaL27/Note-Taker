@@ -1,14 +1,14 @@
 {
   "notes": [
     {
-      "title": "test note",
-      "text": "this is a test note",
-      "id": "0"
+      "title": "third test note",
+      "text": "this is the third test note",
+      "id": "1"
     },
     {
-      "title": "Another note test",
-      "text": "this is another test.",
-      "id": "1"
+      "title": "I made another note",
+      "text": "I made another note",
+      "id": "ff95162f-31ed-4645-8282-b46273b71cda"
     }
   ]
 }

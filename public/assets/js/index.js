@@ -81,7 +81,6 @@ const handleNoteSave = () => {
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
-
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
 
@@ -118,6 +117,7 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+  console.log("inside render note list", notes);
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
@@ -157,7 +157,7 @@ const renderNoteList = async (notes) => {
   if (jsonNotes.length === 0) {
     noteListItems.push(createLi('No saved Notes', false));
   }
-  jsonNotes.notes.forEach((note) => {
+  jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
 
